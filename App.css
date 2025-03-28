@@ -36,6 +36,15 @@
 .nav-items li:hover {
     color: #ffe082; /* Highlight color */
 }
+.nav-items button {
+    background-color: #f1ac52;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    height: 30px;
+    font-size: 18px;
+    font-weight: bold;
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -60,26 +69,56 @@
     background-color: #f8f8f8;
 }
 
-/* Search Bar */
-.search {
-    text-align: left;
-    color: #fff;
+/* filter */
+.BtnDiv {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  input[type="text"] {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.3s;
+  }
+  
+  input[type="text"]:focus {
+    border-color: #ff6f00;
+  }
+  
+  .BtnDiv button {
+    padding: 8px 16px;
+    background-color: #ff6f00;
+    color: white;
+    border: none;
+    border-radius: 6px;
     cursor: pointer;
-    background-color: #f5661c;
-    border-radius: 0px;
-    width: 100%;
-    max-width: none;
-    padding: 10px;
-    font-size: 15px;
-    font-weight: bold;
-    transition: background .3s;
-    
-}
-
-.search:hover {
-    background-color: #e65100;
-}
-
+    font-size: 16px;
+    transition: background 0.3s, transform 0.2s;
+  }
+  
+  .BtnDiv button:hover {
+    background-color: #ff6f00;
+    transform: scale(1.05);
+  }
+  
+  .BtnDiv button:active {
+    transform: scale(0.95);
+  }
+  
+  .search {
+    background-color: #ff6f00;
+  }
+  
+  .search:hover {
+    background-color: #ff6f00;
+  }
+  
+  
 /* Restaurant Container */
 .res-container {
     display: flex;
@@ -136,6 +175,34 @@
     justify-content: space-between;
     align-items: center;
 }
+
+.shimm-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.shimm-card {
+    width: 250px;
+    height: 250px;
+    background: linear-gradient(90deg, #dcdcde 25%, #edeef1 50%, #f6f7f8 75%);
+    background-size: 200% 100%;
+    animation: shimmer-animation 1.5s infinite linear;
+    border-radius: 8px;
+    margin: 10px 0;
+  }
+  
+  @keyframes shimmer-animation {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+  
 
 /* Responsive Design */
 @media (max-width: 768px) {
