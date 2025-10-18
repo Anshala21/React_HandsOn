@@ -11,6 +11,8 @@
     flex-shrink: 0;
 }
 
+
+
 .logo {
     width: 80px; /* Adjust size as needed */
     height: auto;
@@ -210,4 +212,48 @@
         flex-direction: column;
         align-items: center;
     }
+}
+
+.Rest-Menu{
+  position: absolute;   /* position relative to the page */
+  top: 20px;            /* distance from top */
+  left: 50%;            /* move to middle horizontally */
+  transform: translateX(-50%); /* adjust to exact center */
+  text-align: center;   /* center the text itself */
+
+}
+
+.accordianTitle{
+  text-align: center;
+  cursor: "pointer";
+  background-color : rgb(220, 219, 219);
+  padding: "10px";
+  border-radius: "12px";
+  border-width: thin;
+  color: #101010;
+}
+.accordian-item-name{
+  text-align: center;
+}
+.accordian-categories{
+ cursor: "pointer";
+  background: rgb(247, 235, 235);
+  padding: "10px";
+  border-radius: "12px";
+  display: "inline-block"; 
+  
+  border-width: thin;
+  white-space: normal;      /* allow wrapping */
+ 
+}
+.accordian-item .accordian-itemDesc{
+
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  
+}
+.accordian-container{
+  width: 1000px;
+  margin: 0 auto; 
 }

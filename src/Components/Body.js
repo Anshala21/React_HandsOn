@@ -1,6 +1,8 @@
 import RestaurantCard from "./RestaurantCard";
-import { useState , useEffect } from "react";
+import { useState , useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
+import contextData from "../Utility/contextData";
 
 const Body =()=> {
     const [restaurantList,setRestaurantList]=useState([]);
@@ -40,6 +42,7 @@ const Body =()=> {
         if(restaurantList.length === 0){
           return <Shimmer/>
         }
+        const {loggedInUser,setUserFunc} = useContext(contextData);
 
     return(
       
@@ -53,9 +56,12 @@ const Body =()=> {
           }
           >Search</button>
             <button onClick={resFilter}>Filter 4+ rated Restaurants</button>
+             <input type="text"  onChange={(e)=>setUserFunc(e.target.value)}></input>
+         <div>{loggedInUser}</div>
          </div> 
+        
          <div className="res-container">
-         {filteredList.map((restaurant)=>  <RestaurantCard key={restaurant.info.id} resData={restaurant}/>)}
+         {filteredList.map((restaurant)=> <Link key={restaurant?.info?.id} to={"/Restaurants/" + restaurant?.info?.id}> <RestaurantCard  resData={restaurant}/></Link>)}
            </div>
        </div>
     )
