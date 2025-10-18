@@ -1,7 +1,7 @@
 import { resImgPrefix } from "../Utility/Constant";
 const RestaurantCard=(props)=>{
     const {resData} = props;
-    const{name,avgRating,cuisines,cloudinaryImageId}=resData.info;
+    const{name,avgRating,cuisines,cloudinaryImageId}=resData?.info;
                return(
                 <div className="res-card">
                   <img alt="restaurant logo" src={resImgPrefix+cloudinaryImageId}/>
